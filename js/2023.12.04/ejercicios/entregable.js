@@ -35,72 +35,103 @@ Si es múltiplo de 3 y de 5 (a la misma vez), deberá imprimir "FizzBuzz".*/
 
 
 
-/*----------------------------------------------------------------------------------------*/
-let choice;
-let total = 0;
-do {
-    choice = parseInt(prompt(`¡Hola bienvenid@!\n A continuación se detallan las ocpiones disponibles, ingrese un valor:
-\n1. Ver la carta.
-\n2. Escuchar un chiste.
-\n3. Pedir la cuenta.
-\n4. Salir.`));
+/*----------------------------------------- Bar -----------------------------------------------*/
+// let choice;
+// let total = 0;
+// do {
+//     choice = parseInt(prompt(`¡Hola bienvenid@!\n A continuación se detallan las ocpiones disponibles, ingrese un valor:
+// \n1. Ver la carta.
+// \n2. Escuchar un chiste.
+// \n3. Pedir la cuenta.
+// \n4. Salir.`));
 
-    switch (choice) {
-        case 1:
-            let producto = parseInt(prompt(`Ingrese el número del producto que desea consumir:
-                \n1. Café --- $550.
-                \n2. Tostado --- $2340.
-                \n3. Fruta --- $1750.
-                \n4. Gaseosa --- $800.`));
+//     switch (choice) {
+//         case 1:
+//             let producto = parseInt(prompt(`Ingrese el número del producto que desea consumir:
+//                 \n1. Café --- $550.
+//                 \n2. Tostado --- $2340.
+//                 \n3. Fruta --- $1750.
+//                 \n4. Gaseosa --- $800.`));
 
-            switch (producto) {
-                case 1:
-                    total += 550;
-                    alert("Usted seleccionó un café.")
-                    break;
-                case 2:
-                    total += 2340;
-                    alert("Usted seleccionó un Tostado.")
-                    break;
-                case 3:
-                    total += 1750;
-                    alert("Usted seleccionó Fruta.")
-                    break;
-                case 4:
-                    total += 800;
-                    alert("Usted seleccionó una Gaseosa.")
-                    break;
-                default:
-                    alert(`Opción inválida, intente nuevamente.`)
-                    break;
-            };
+//             switch (producto) {
+//                 case 1:
+//                     total += 550;
+//                     alert("Usted seleccionó un café.")
+//                     break;
+//                 case 2:
+//                     total += 2340;
+//                     alert("Usted seleccionó un Tostado.")
+//                     break;
+//                 case 3:
+//                     total += 1750;
+//                     alert("Usted seleccionó Fruta.")
+//                     break;
+//                 case 4:
+//                     total += 800;
+//                     alert("Usted seleccionó una Gaseosa.")
+//                     break;
+//                 default:
+//                     alert(`Opción inválida, intente nuevamente.`)
+//                     break;
+//             };
 
-            break;
-        case 2:
-            alert('¿Por qué la escoba es feliz todos los días? - Porque siempre ba-rriendo xD');
-            break;
-        case 3:
-            let respuesta = prompt(`Usted solicitó la cuenta. El total es de $${total.toFixed()}, desea dejar propina? Se calcula un 10% de propina s/n`);
-            if (respuesta === "s") {
-                total = (total * 1.1).toFixed();
-            }
-            
-            let respuesta2;
-            do {
-                respuesta2 = prompt(`El monto final a abonar es $${total}, desea abonarlo? s/n`);
-                if (respuesta2 === "s") {
-                    alert("¡Muchas gracias por su compra y por elegirnos!");
-                    choice = 4;
-                } else {
-                    alert("¡No puede retirarse sin abonar lo consumido!")
-                }
-            } while (respuesta2 != "s");
-            
-            break;
+//             break;
+//         case 2:
+//             alert('¿Por qué la escoba es feliz todos los días? - Porque siempre ba-rriendo xD');
+//             break;
+//         case 3:
+//             let respuesta = prompt(`Usted solicitó la cuenta. El total es de $${total.toFixed()}, desea dejar propina? Se calcula un 10% de propina s/n`);
+//             if (respuesta === "s") {
+//                 total = (total * 1.1).toFixed();
+//             }
 
-        case 4:
-            alert('¡Gracias por elegirnos!');
-            break;
+//             let respuesta2;
+//             do {
+//                 respuesta2 = prompt(`El monto final a abonar es $${total}, desea abonarlo? s/n`);
+//                 if (respuesta2 === "s") {
+//                     alert("¡Muchas gracias por su compra y por elegirnos!");
+//                     choice = 4;
+//                 } else {
+//                     alert("¡No puede retirarse sin abonar lo consumido!")
+//                 }
+//             } while (respuesta2 != "s");
+
+//             break;
+
+//         case 4:
+//             alert('¡Gracias por elegirnos!');
+//             break;
+//     }
+
+// } while (choice != 4);
+
+/*--------------------------------Pirámide-----------------------------------------*/
+let num = parseInt(prompt("Ingrese un número entero"));
+
+// Triángulo superior
+for (let i = 1; i <= num; i++) {
+    let asterisco = '';
+    for (let j = 1; j <= i; j++) {
+        asterisco += '*';
     }
+    console.log(asterisco);
+}
 
-} while (choice != 4);
+// Triángulo inferior
+for (let i = num - 1; i >= 1; i--) {
+    let asterisco = '';
+    for (let j = 1; j <= i; j++) {
+        asterisco += '*';
+    }
+    console.log(asterisco);
+}
+
+/* ----------------------- Factorial -------------------------- */
+
+let num2 = parseInt(prompt("Ingrese un número entero"));
+let factorial = 1;
+
+for (let i = 1; i <= num2; i++) {
+    factorial *= i;
+}
+alert(`El factorial de ${num2} es ${factorial}`)
