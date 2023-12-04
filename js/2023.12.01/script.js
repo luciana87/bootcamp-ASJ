@@ -10,7 +10,7 @@ console.log("El mensaje ingresado tiene " + msjIngresado.length + " caracteres."
 
 let edad = parseInt(prompt("Ingrese su edad"));
 function calcularDias (num) {
-    return (parseInt(num)*365);
+    return (num * 365);
 }
 alert(edad + " años son " + calcularDias(edad) + " días.");
 
@@ -29,12 +29,12 @@ sumar(a,b);
 
 function calcularSnacks (age, maxAge, cantSnack, snack) {    
     let resultado = (((maxAge - age ) * 365) * cantSnack);
-    alert("Necesitarás " + resultado + " de " + snack + "  para que te alcancen hasta los " + maxAge + " años.")
+    alert(`Necesitarás ${resultado} de ${snack}  para que te alcancen hasta los ${maxAge} años.`)
     return resultado;
 }
 
 function calcularMonto (price, totalSnack) {
-    alert("Vas a gastar un total de $" + (price*totalSnack) + " en snacks.");
+    alert(`Vas a gastar un total de $${price*totalSnack} en snacks.`);
 }
 
 let price = 250;
@@ -48,8 +48,8 @@ calcularMonto(price, totalSnack);
 //----------------- Ejercicio 5: vacaciones --------------------------------------------------
 
 function calcularGastoPorComida (dias,presupuesto,cantComidas){
-    let total = (presupuesto/cantComidas);
-    alert("Podés gastar $" + total + " en cada comida para que te alcance la plata durante los " + dias + " días del viaje.")
+    let total = (presupuesto/cantComidas).toFixed(2);
+    alert(`Podés gastar $${total}  en cada comida para que te alcance la plata durante los ${dias} días del viaje.`)
 }
 let dias = 14;
 let presupuesto = 400000;
