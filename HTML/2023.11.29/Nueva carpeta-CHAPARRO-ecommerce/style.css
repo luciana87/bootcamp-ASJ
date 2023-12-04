@@ -1,0 +1,194 @@
+* {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    box-sizing: border-box;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* .grid {
+    background-color: rgb(253, 248, 242);
+} */
+/* ---- BODY ----  */
+.container {
+    display: grid;
+    grid-template-rows: 10% 85% 5%;
+    gap: 10px;
+    height: 100vh;
+    margin: 0 10%;
+}
+
+/* ---- HEADER ----  */
+
+header {
+    color: rgb(112, 110, 110);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+header nav ul li a:hover {
+    transition: .3s;
+    color: #00ffeed4;
+}
+
+header nav ul li {
+    margin: 0px 20px;
+}
+
+header nav ul li a {
+    color: rgb(112, 110, 110);
+    font-size: 1em;
+}
+
+/* ---- MAIN ----  */
+
+main {
+    height: 100%;
+}
+
+.caja-main {
+    height: 100%;
+}
+
+main div .section-element {
+    /* height: 91.7%; */
+    margin-bottom: 10px;
+}
+
+main .elemento-superior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5%;
+    margin-bottom: 10px;
+}
+
+
+
+/*------------------------------------------------*/
+
+.paginado-buscador {
+    display: flex;
+    align-items: center;
+}
+
+main div div .buscador {
+    height: 100%;
+}
+
+.buscador input, .paginado-buscador div select, .buscador i {
+    padding: 6px 16px;
+}
+
+.buscador input{
+    border: solid 2px rgba(205, 205, 202, 0.408);
+}
+
+.paginado-buscador div select, .buscador i {
+    background-color: black;
+    color: white;
+}
+
+.paginado-buscador div select{
+    font-size: 12px;
+}
+
+.buscador i{
+    margin-right: 25px;
+}
+
+.paginado-contenedor {
+    height: 100%;
+}
+
+main div div div ul {
+    display: flex;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+main div div div ul li {
+    display: inline;
+}
+
+main div div div ul li a {
+    color: rgb(112, 110, 110);
+    float: left;
+    padding: 4px 16px;
+    text-decoration: none;
+    transition: .3s;
+    border: 1px solid #ddd;
+}
+
+main div div div ul li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+main div div div ul li a.active {
+    background-color:#00ffeed4;
+    color: white;
+    border: 1px solid #00ffeed4;
+}
+
+
+/*------------------------------------------------*/
+
+
+
+
+.item-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 50% 50%;
+    height: 90%;
+    gap: 15px;
+}
+
+main div .element {
+    height: auto;
+    /* background-color: aquamarine; */
+    border: solid 2px rgba(205, 205, 202, 0.408);
+    padding: 10px;
+}
+
+main div .element img {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+main div .element .product-name {
+    margin-bottom: 5px;
+    color: #2cdcd1d4;
+    font-size: 20px;
+}
+
+.product-price {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---- FOOTER ---- */
+
+#footer {
+    display: flex;
+    background-color: rgb(246, 215, 153);
+    color: rgb(112, 110, 110);
+    position: static;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}

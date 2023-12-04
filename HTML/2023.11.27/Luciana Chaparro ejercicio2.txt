@@ -1,0 +1,28 @@
+Alumno alumno1 = new Alumno("Mariano Damian","Hernandez", notas)
+Alumno alumno2 = new Alumno("Ramiro","Díaz", notas)
+
+ArrayList<Alumno> alumnos = new ArrayList<Alumno>();
+
+alumnos.add(alumno1);
+alumnos.add(alumno2);
+  
+public double promedio(ArrayList<Alumno> alumnos, String estado){
+	ArrayList<PromedioAlumno> promedios = new ArrayList <PromedioAlumno>();
+	foreach (Alumno alumno: alumnos) {
+		double suma= 0;
+		double promedio = 0;
+		array[] notas = foralumno.getNotas;
+
+		for (int i = 0; i < notas.lenght; i++) {
+			suma+= notas[i];
+		}
+		promedio = suma/notas.lenght;
+		if (alumno.getEstado.isEquals("aprobado")){
+			
+		
+		}
+	
+	}
+}
+
+
