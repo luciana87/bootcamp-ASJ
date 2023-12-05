@@ -1,0 +1,17 @@
+/* main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+} */
+
+/* .calculator {
+    text-align: center;
+} */
+
+
+.btn-char {
+    color: rgb(46, 45, 44);
+    background-color: #f79443;
+}

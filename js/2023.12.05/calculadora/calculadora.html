@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simple</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <main>
+        <div class="container m-3 p-4 ">
+            <div class="row">
+                <input type="text" id="display" class="col" disabled placeholder="0">
+            </div>
+            <div class="row">
+                <button class="btn col btn-light" onclick="clearDisplay()">AC</button>
+                <button class="btn col btn-light" onclick="clearDisplay()">+/-</button>
+                <button class="btn col btn-light" onclick="clearDisplay()">%</button>
+                <!-- <button class="btn col btn-light" onclick="clearDisplay()">/</button> -->
+            </div>
+            <div class="row">
+                <button class="btn col btn-light ">7</button>
+                <button class="btn col btn-light" >8</button>
+                <button class="btn col btn-light">9</button>
+                <button class="btn col-2 btn-char">X</button>
+            </div>
+            <div class="row ">
+                <button class="btn col btn-light" >4</button>
+                <button class="btn col btn-light" >5</button>
+                <button class="btn col btn-light" >6</button>
+                <button class="btn col-2 btn-char">-</button>
+            </div>
+            <div class="row">
+                <button class="btn col btn-light" onclick="appendToDisplay('1')">1</button>
+                <button class="btn col btn-light" onclick="appendToDisplay('2')">2</button>
+                <button class="btn col btn-light" onclick="appendToDisplay('3')">3</button>
+                <button class="btn col-2 btn-char" onclick="appendToDisplay('+')">+</button>
+            </div>
+
+            <div class="row ">
+                <button class="btn col btn-light" onclick="appendToDisplay('0')">0</button>
+                <button class="btn col  btn-success" onclick="calculateResult()">=</button>
+                <button class="btn col-2 btn-char" onclick="appendToDisplay(',')">/</button>
+            </div>
+
+
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="./calculadora.js"></script>
+</body>
+
+</html>
