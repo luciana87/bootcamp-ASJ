@@ -1,10 +1,26 @@
 <div>
     <h2>Proyecto 1</h2>
+</div>
+<div class="container d-flex justify-content-start ">
+    <div class="box-checkbox form-check form-switch mt-4 mr-5">
+        <input class="form-check-input mr-3" type="checkbox" role="switch" id="completed">
+        <label class="form-check-label" for="completed">Completas</label>
+    </div>
+    <div class="bg-switch box-checkbox form-check form-switch mt-4 ">
+        <input class="form-check-input mr-3" type="checkbox" role="switch" id="incomplete">
+        <label class="form-check-label" for="incomplete">Incompletas</label>
+    </div>
+    <div class="box-checkbox form-check form-switch mt-4">
+        <input class="form-check-input mr-3" type="checkbox" role="switch" id="deleted">
+        <label class="form-check-label" for="deleted">Eliminadas</label>
+    </div>
+</div>
+<div class="mt-5">
     <ul>
         <li *ngFor="let task of tasks; index as i">
             <input type="checkbox" (change)="statusTask(i)">
-            <span [class.completed]="task.status"> {{ task.text }}</span> <!-- [class.completed] le agrega la clase css completed si el status es true, eso sucede cuando cleckeo en el checkbox-->
-            <p [ngModel]="p_date">{{p_date}}</p>
+            <span [class.completed]="task.status"> {{ task.text }}</span><!-- [class.completed] le agrega la clase css completed si el status es true, eso sucede cuando cleckeo en el checkbox-->
+            <p [class.completed]="task.status" [ngModel]="p_date">{{p_date}}</p>
         </li>
     </ul>
 </div>
