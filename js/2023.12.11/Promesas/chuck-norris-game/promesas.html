@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promesas</title>
+</head>
+
+<body>
+    <div>
+        <input id="pokemon" type="text" placeholder="Ingrese el número del pokemon">
+        <button id="buscar">Buscar</button>
+        <img src="" alt="" id="imagen">
+        <p id="info"></p>
+    </div>
+
+
+
+
+    <script>
+        let buscar = document.getElementById("buscar");
+        let imagen = document.getElementById("imagen");
+        let info = document.getElementById("info");
+        
+        buscar.addEventListener("click", () =>{
+            let pokemon = document.getElementById("pokemon").value;
+
+            
+        })
+
+
+        //---------------------------------------
+        let completo = false;
+
+        // const promesa = new Promise(function (param1,param2) {
+
+        // })
+
+        const promesa2 = new Promise((resolve, reject) => {
+            //llamada a un servicio API
+            if (completo) {
+                resolve("Resuelto.")
+            } else {
+                reject("¡Ups, algo saliómal!")
+            }
+        });
+        console.log(promesa2);
+
+
+        const promesa3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+
+            })
+            resolve("Dato guardado correctamente.")
+        });
+
+        promesa3.then(respuesta => {
+            console.log(respuesta);
+        });
+
+        const promesa4 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("Dato guardado correctamente.", 3000);
+            });
+        });
+
+        
+        promesa4.then(respuesta => {
+            console.log(respuesta);
+        });
+
+        console.log("Instrucción1");
+        console.log("Instrucción1");
+
+
+    </script>
+</body>
+
+</html>

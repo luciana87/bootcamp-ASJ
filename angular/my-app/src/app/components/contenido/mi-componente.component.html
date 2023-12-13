@@ -1,0 +1,24 @@
+<p>Esto es el contenido del componente 'mi-component'</p>
+<app-lista></app-lista>
+<h2>{{ titulo | uppercase }}</h2>
+<button (click)="generarAleatorio()">Generar número aleatorio</button>
+<button (click)="incrementarNum()">Incrementar</button>
+<button (click)="decrementarNum()">Decrementar</button>
+
+<h3>{{ num | currency: "ARS " :'symbol':'4.2-2'}}</h3>
+
+<p class="text-danger ">{{ persona.nombre }} tiene {{ persona.edad }} años.</p>
+
+<div *ngIf="!flag">
+    <h4>Este es un mensaje</h4>
+</div>
+
+<div *ngIf="num > 3">
+    <h4 class="text-primary ">Esto es un msj </h4>
+</div>
+
+
+<p>Este es el listado de cosas a comprar:</p>
+<ul>
+    <li *ngFor="let producto of compras">{{ producto }}</li>
+</ul>
