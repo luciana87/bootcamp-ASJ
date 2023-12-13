@@ -57,6 +57,7 @@ const products = [
     }
 ];
 
+// -----------------------------------------------------------
 
 // Dibujo el carrito de compra [CARRITO]
 function drawCart() {
@@ -67,7 +68,7 @@ function drawCart() {
     carrito.forEach((product) => {
         // genero el html a partir del producto
         let fila = document.createElement("tr");
-        // Configurar el contenido de la fila con los datos del producto
+        // Configuro el contenido de la fila con los datos del producto
         fila.innerHTML = `
             <th class="row">${product.id}</th>
             <td>${product.name}</td>
@@ -75,12 +76,15 @@ function drawCart() {
             <td>${product.count}</td>
             <td>${product.price * product.count}</td>
         `;
-        // Agregar la fila al cuerpo de la tabla
+        // Agrego la fila al cuerpo de la tabla
         carritoContainer.appendChild(fila);
         total += product.price * product.count;
     });
     document.getElementById('total-carrito').textContent = "$" + total;
 }
+
+// -----------------------------------------------------------
+
 
 function cleanCart() {
     localStorage.removeItem("carrito");
@@ -126,6 +130,7 @@ function createDetail(detailContainer) {
     })
 }
 
+// -----------------------------------------------------------
 
 // Dibuja las cards dinamicamente [INDEX]
 
@@ -160,31 +165,6 @@ function drawCards(container) {
         })
     })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
