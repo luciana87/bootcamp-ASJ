@@ -25,6 +25,6 @@
     </ul>
 </div>
 <div class="d-flex align-items-center ">
-    <input class="input" type="text" [(ngModel)]="newTask" placeholder="Nueva tarea">
+    <input class="input" type="text" [(ngModel)]="newTask" placeholder="Nueva tarea" (keyup.enter)="addTask()">
     <button class="btn mr-5 btn btn-outline-success " (click)="addTask()">Add</button>
 </div>
