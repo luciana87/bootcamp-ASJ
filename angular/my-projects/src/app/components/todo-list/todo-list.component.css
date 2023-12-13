@@ -1,0 +1,7 @@
+.input {
+    margin-right: 2em;
+}
+
+.completed {
+    text-decoration: line-through;
+}
