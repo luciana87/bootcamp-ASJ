@@ -4,6 +4,7 @@
         <li *ngFor="let task of tasks; index as i">
             <input type="checkbox" (change)="statusTask(i)">
             <span [class.completed]="task.status"> {{ task.text }}</span> <!-- [class.completed] le agrega la clase css completed si el status es true, eso sucede cuando cleckeo en el checkbox-->
+            <p [ngModel]="p_date">{{p_date}}</p>
         </li>
     </ul>
 </div>

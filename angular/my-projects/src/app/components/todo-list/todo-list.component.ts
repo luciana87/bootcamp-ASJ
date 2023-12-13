@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class TodoListComponent {
   tasks: { text: string; status: boolean }[] = [];
   newTask = '';
+  p_date = new Date().toLocaleDateString();
 
   // addTask () {
   //   this.tasks.push(this.newTask);
@@ -15,8 +16,9 @@ export class TodoListComponent {
   // }
 
   addTask() {
-    this.tasks.push({ text: this.newTask, status: false });
+    this.tasks.push({ text: this.newTask, status: false});
     this.newTask = '';
+    this.p_date = new Date().toLocaleDateString();
   }
 
   statusTask (i: number) {
