@@ -9,6 +9,8 @@ import { MainComponent } from './components/main/main.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TableComponent } from './components/table/table.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -19,10 +21,11 @@ import { TableComponent } from './components/table/table.component';
     MainComponent,
     FooterComponent,
     NavbarComponent,
-    TableComponent
+    TableComponent    
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
