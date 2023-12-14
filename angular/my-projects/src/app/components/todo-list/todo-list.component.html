@@ -1,4 +1,4 @@
-<div>
+<div class="mt-3">
     <h2>Proyecto 1</h2>
 </div>
 <div class="container d-flex justify-content-start ">
@@ -18,11 +18,11 @@
 <div class="mt-5">
     <ul>
 
-        <li *ngFor="let task of filteredTaskList; index as i">
-            <input type="checkbox" (change)="statusTask(i)" [checked]="task.status">
-            <span [class.completed]="task.status"> {{ task.text }}</span>
-            <p [class.completed]="task.status">{{task.created}}</p>
-        </li>
+            <li *ngFor="let task of filteredTaskList; index as i">
+                    <input type="checkbox" (change)="statusTask(i)" [checked]="task.status">
+                    <span [class.completed]="task.status"> {{ task.text }}</span>
+                    <p [class.completed]="task.status">{{task.created}}</p>
+            </li>
     </ul>
 </div>
 <div class="d-flex align-items-center ">

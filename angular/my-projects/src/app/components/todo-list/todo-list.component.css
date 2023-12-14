@@ -15,3 +15,9 @@
 .bg-switch input:checked {
     background: #f38a98;
 }
+
+h2 {
+    text-shadow: 2px 2px 5px #f38a98;
+    font-family: 'FontAwesome';
+    font-size: 1.5em;
+}

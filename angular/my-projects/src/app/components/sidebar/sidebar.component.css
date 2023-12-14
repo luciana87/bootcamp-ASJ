@@ -5,3 +5,7 @@ background-color: #f5c9be58;
 .bg-sidebar span {
     color: #7a425b;
 }
+
+li a span {
+    font-size: 1.3em;
+}
