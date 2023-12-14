@@ -2,7 +2,7 @@
 
     <h4>Componente PADRE</h4>
     <!--Si envío un texto, no hace falta ponerle [], si envío variable/objeto/array si los uso -->
-    <app-hijo datoEnviado="I am your father"> </app-hijo> //<!-- Si es un string-->
+    <app-hijo datoEnviado="I am your father"> </app-hijo> <!-- Si es un string-->
     <app-hijo [datoEnviado]="{ nombre: 'Luciana', msj: 'Comunicación padre a hijo' }"> </app-hijo> <!-- Si es algún objeto-->
 
 
@@ -17,5 +17,5 @@
 <div>
     <input type="text" #myInput> <!-- Es una variable no un id-->
     <button (click)="mostrar(myInput.value)">Mostrar</button>
-    <h4>{{ contenidoInput }}</h4> <!--Muestro en el h4 en contenido ingresado en el input, otra manera de hacerlo en vez de usar [ngModel]-->
+    <h4>{{ contenidoInput }}</h4> <!--Muestro en el h4 en contenido ingresado en el input, otra manera de hacerlo en vez de usar ngModel]-->
 </div>

@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { TableComponent } from './components/table/table.component';
 import { PadreComponent } from './components/padre/padre.component';
 import { HijoComponent } from './components/hijo/hijo.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 
 
@@ -26,7 +27,8 @@ import { HijoComponent } from './components/hijo/hijo.component';
     NavbarComponent,
     TableComponent,
     PadreComponent,
-    HijoComponent  
+    HijoComponent,
+    ContactoComponent  
   ],
   imports: [
     BrowserModule,
