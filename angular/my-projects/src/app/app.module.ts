@@ -2,29 +2,28 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MiComponenteComponent } from './components/contenido/mi-componente.component';
-import { ListaComponent } from './components/lista/lista.component';
-import { HeaderComponent } from './components/header/header.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { MainComponent } from './components/main/main.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { TableComponent } from './components/table/table.component';
-
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MiComponenteComponent,
-    ListaComponent,
-    HeaderComponent,
+    NavbarComponent,
     MainComponent,
     FooterComponent,
-    NavbarComponent,
-    TableComponent    
+    SidebarComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    NgbModule,
     FormsModule
   ],
   providers: [],

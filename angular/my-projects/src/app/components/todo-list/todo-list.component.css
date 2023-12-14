@@ -1,0 +1,33 @@
+.input {
+    margin-right: 2em;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+.box-checkbox {
+    margin-right: 2em;
+}
+
+
+
+.bg-switch input:checked {
+    background: #f38a98;
+}
+
+h2 {
+    text-shadow: 2px 2px 5px #f38a98;
+    font-family: 'FontAwesome';
+    font-size: 1.5em;
+}
+
+ul li p {
+    font-size: 0.7em;
+    font-style: italic;
+}
+
+.btn-delete {
+    margin-left: 1.5rem;
+    height: 20%;
+}

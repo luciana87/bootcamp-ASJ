@@ -3,3 +3,18 @@
     <li>Belgrano</li>
     <li>Instituto</li>
 </ul> -->
+
+<!--<input type="text" [(ngModel)]="valor_input">
+<button class="btn btn-info ">Mostrar</button>
+
+<h3>Valor del input = {{valor_input }}</h3> Mostrar el valor del input en el h3-->
+
+
+<input type="text" [(ngModel)]="valor_input" (keyup.enter)="agregar()">
+
+<h3>colores</h3> 
+
+<ul>
+    <li *ngFor="let color of colores">
+    {{color}} </li>
+</ul>
