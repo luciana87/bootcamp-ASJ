@@ -10,6 +10,9 @@ import { MainComponent } from './components/main/main.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TableComponent } from './components/table/table.component';
+import { PadreComponent } from './components/padre/padre.component';
+import { HijoComponent } from './components/hijo/hijo.component';
+
 
 
 @NgModule({
@@ -21,7 +24,9 @@ import { TableComponent } from './components/table/table.component';
     MainComponent,
     FooterComponent,
     NavbarComponent,
-    TableComponent    
+    TableComponent,
+    PadreComponent,
+    HijoComponent  
   ],
   imports: [
     BrowserModule,
