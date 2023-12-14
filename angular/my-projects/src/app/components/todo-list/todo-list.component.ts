@@ -27,14 +27,14 @@ export class TodoListComponent {
     this.p_date = new Date().toLocaleDateString();
   }
 
-  statusTask(i: number) {
+  taskCheked(i: number) {
     this.tasks[i].status = !this.tasks[i].status;
   }
 
-  deleteTask(i: number) {
-    this.tasks[i].deleted = !this.tasks[i].deleted;
+  deleteTask(task: any) {
+    task.deleted = true;
+    this.filteredTasks();
   }
-
 
   filteredTasks() {
     if (this.value_checkbox_completed || this.value_checkbox_incomplete || this.value_checkbox_deleted) {
@@ -45,7 +45,7 @@ export class TodoListComponent {
       )
 
     } else {
-      this.filteredTaskList = this.tasks;
+      this.filteredTaskList = this.tasks.filter(task => !task.deleted);
     }
   }
 }
