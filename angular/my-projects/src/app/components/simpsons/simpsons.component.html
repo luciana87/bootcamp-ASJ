@@ -21,7 +21,7 @@
         <div class="mt-3 ">
             <button
                 (click)="addCharacter(nameInput.value,ocupacionInput.value,imgInput.value); nameInput.value = '';ocupacionInput.value = '';imgInput.value='';"
-                class="btn btn-block btn-primary">Cargar</button>
+                class="btn btn-block btn-primary" routerLink="/product-list">Cargar</button>
         </div>
     </section>
 
@@ -37,7 +37,7 @@
 
             <tbody>
                 <tr *ngFor="let character of characterList; index as i">
-                    <th><img class="listing-photo" [src]="character.img"></th>
+                    <th><img class="listing-photo img-thumbnail " [src]="character.img"></th>
                     <td>{{character.name}}</td>
                     <td>{{character.ocupacion}}</td>
                 </tr>
