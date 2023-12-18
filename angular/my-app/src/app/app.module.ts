@@ -14,6 +14,10 @@ import { PadreComponent } from './components/padre/padre.component';
 import { HijoComponent } from './components/hijo/hijo.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 
+import { MiServicioService } from './services/mi-servicio.service'; //Importo el modulo para poder usar el servicio
+import { HttpClientModule } from '@angular/common/http'; //Importo el modulo para poder usar http
+
+
 
 
 @NgModule({
@@ -28,13 +32,15 @@ import { ContactoComponent } from './components/contacto/contacto.component';
     TableComponent,
     PadreComponent,
     HijoComponent,
-    ContactoComponent  
+    ContactoComponent,
+    
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule //Lo agrego a los imports
   ],
-  providers: [],
+  providers: [MiServicioService], //Puede usar cualquier componente el servicio. Globalmente.
   bootstrap: [AppComponent]
 })
 export class AppModule { }
