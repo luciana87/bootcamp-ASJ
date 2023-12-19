@@ -1,0 +1,50 @@
+
+<div class="row align-middle "> <!--Para centrar el texto: text-center y align-middle -->
+    <div class="col-md-7">
+        <h3>Lista de usuarios: </h3>
+        <table class="table table-hover " >
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Ávatar</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of userList">
+                    <td>
+                        <img src="{{ user.avatar }}" alt="{{ user.first_name }}" width="20%">
+                    </td>
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.last_name }}</td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-secondary me-2" (click)="update(user)" >Editar</button>
+                        <button class="btn btn-sm btn-outline-danger" (click)="delete(user.id)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-5">
+        <h3>Nuevo usuario</h3>
+        <form #miForm="ngForm" (ngSubmit)="create(miForm)">
+            <input type="hidden" name="id" [(ngModel)]="service.dataUser.id"><!--Input de tipo oculto para el 'id', lo sincronizo con el model del servicio-->
+            <div class="mb-5">
+                <label for="" class="form-label">Nombre</label>
+                <input type="text" class="form-control" placeholder="Nombre" name="name" [(ngModel)]="service.dataUser.name" required minlength="4" #name="ngModel">
+                <div *ngIf="name.errors?.['minlength']" class="col-auto ">
+                    <span id="" class="form-text ">
+                        Debe tener al menos 4 caracteres
+                    </span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Trabajo</label>
+                <input type="text" class="form-control" placeholder="Trabajo" name="job" [(ngModel)]="service.dataUser.job">
+            </div>
+            <button type="submit" class="btn btn-outline-success me-2" [disabled]="!miForm.valid">Guardar</button>
+            <button class="btn btn-outline-warning " click="resetForm()">Clear</button>
+        </form>
+    </div>
+</div>
