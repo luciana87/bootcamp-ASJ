@@ -1,0 +1,32 @@
+<div class="container mt-5">
+    <h3>Carrito de Compras</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="col">#</th>
+                <th class="col">Producto</th>
+                <th class="col">Precio</th>
+                <th class="col">Cantidad</th>
+                <th class="col">Total</th>
+            </tr>
+        </thead>
+        <tbody id="carrito-body">
+            <!-- <th **ngFor="let p of productList" class="row">{{p.id}}</th>
+            <td>{{p.name}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.name}}</td> -->
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4" class="text-right"><strong>Total:</strong></td>
+                <td id="total-carrito">0.00</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="text-center">
+        <button class="btn btn-primary" id="btn-payment">Pagar</button>
+        <button class="btn btn-danger  " id="btn-clean-cart">Cancelar compra</button>
+    </div>
+</div>
