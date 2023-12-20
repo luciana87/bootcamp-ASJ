@@ -12,5 +12,23 @@
 
 <mi-componente></mi-componente> -->
 <app-header></app-header>
-<app-main></app-main>
+<!-- <app-main></app-main> -->
+<!-- <app-padre></app-padre> -->
+
+<ul>
+    <li *ngFor="let tarea of datos">
+        {{ tarea.nombre }} [ {{ tarea.terminada }} ]
+
+    </li>
+</ul>
+
+<hr>
+<!-- {{ personajes | json }} pipe json -->
+
+<ul>
+    <li *ngFor="let personaje of personajes.results">
+        <img src="{{personaje.img}}" alt="" width="50px">
+        {{ personaje.name }} 
+    </li>
+</ul>
 <app-footer></app-footer>

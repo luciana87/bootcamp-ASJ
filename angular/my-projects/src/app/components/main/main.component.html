@@ -1,4 +1,8 @@
 <div class="container bg-light min-vh-100 d-flex">
-    <app-sidebar class="w-25 "></app-sidebar>
-    <app-todo-list class="w-75 "></app-todo-list>
+    <app-sidebar class="w-25"></app-sidebar>
+    <div class="w-75">
+        <router-outlet></router-outlet>
+    </div>
+    <!-- <app-todo-list class="w-75 "></app-todo-list> -->
+    <!-- <app-simpsons class="w-75 " ></app-simpsons> -->
 </div>

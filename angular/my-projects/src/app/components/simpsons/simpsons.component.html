@@ -1,0 +1,47 @@
+
+<div class="d-flex w-100">
+    <section class="w-50 m-3 mt-4 form-control card py-3 mx-auto row d-flex justify-content-center">
+        <h5 class="text-center mb-4">Agrega un personaje: </h5>
+        <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex">
+                <label for="pName" class="form-control-label">Nombre</label>
+                <input class="mt-2" type="text" id="pName" placeholder="Ingrese el nombre" #nameInput>
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+                <label for="ocupacion" class="form-control-label">Ocupación:</label>
+                <input class="mt-2" type="url" id="ocupacion" placeholder="Ocupación" #ocupacionInput>
+            </div>
+        </div>
+        <div class="mt-3 row justify-content-between text-left">
+            <div class="form-group col-12 flex-column d-flex">
+                <label class="form-control-label">URL imágen</label>
+                <input class="mt-2" type="text" id="imagen" placeholder="Ingrese url de la imágen" #imgInput>
+            </div>
+        </div>
+        <div class="mt-3 ">
+            <button
+                (click)="addCharacter(nameInput.value,ocupacionInput.value,imgInput.value); nameInput.value = '';ocupacionInput.value = '';imgInput.value='';"
+                class="btn btn-block btn-primary" routerLink="/product-list">Cargar</button>
+        </div>
+    </section>
+
+    <section class="w-50 mt-4 m-3 ">
+        <table class=" table table-warning  table-striped text-center ">
+            <thead>
+                <tr>
+                    <th scope="col">Imágen</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Ocupación</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let character of characterList; index as i">
+                    <th><img class="listing-photo img-thumbnail " [src]="character.img"></th>
+                    <td>{{character.name}}</td>
+                    <td>{{character.ocupacion}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div>

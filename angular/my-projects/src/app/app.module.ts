@@ -10,6 +10,13 @@ import { MainComponent } from './components/main/main.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { SimpsonsComponent } from './components/simpsons/simpsons.component';
+import { RickAndMortyComponent } from './components/rick-and-morty/table-character/rick-and-morty.component';
+
+
+import { RickAndMortyServiceService } from './services/rick-and-morty/rick-and-morty-service.service';  //Importo el modulo para poder usar el servicio
+import { HttpClientModule } from '@angular/common/http';
+import { CardDetailRmComponent } from './components/rick-and-morty/card-detail-rm/card-detail-rm.component'; //Importo el modulo para poder usar http
 
 @NgModule({
   declarations: [
@@ -18,15 +25,19 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
     MainComponent,
     FooterComponent,
     SidebarComponent,
-    TodoListComponent
+    TodoListComponent,
+    SimpsonsComponent,
+    RickAndMortyComponent,
+    CardDetailRmComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [RickAndMortyServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

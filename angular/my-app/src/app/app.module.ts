@@ -10,6 +10,14 @@ import { MainComponent } from './components/main/main.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TableComponent } from './components/table/table.component';
+import { PadreComponent } from './components/padre/padre.component';
+import { HijoComponent } from './components/hijo/hijo.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+
+import { MiServicioService } from './services/mi-servicio.service'; //Importo el modulo para poder usar el servicio
+import { HttpClientModule } from '@angular/common/http'; //Importo el modulo para poder usar http
+
+
 
 
 @NgModule({
@@ -21,13 +29,18 @@ import { TableComponent } from './components/table/table.component';
     MainComponent,
     FooterComponent,
     NavbarComponent,
-    TableComponent    
+    TableComponent,
+    PadreComponent,
+    HijoComponent,
+    ContactoComponent,
+    
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule //Lo agrego a los imports
   ],
-  providers: [],
+  providers: [MiServicioService], //Puede usar cualquier componente el servicio. Globalmente.
   bootstrap: [AppComponent]
 })
 export class AppModule { }

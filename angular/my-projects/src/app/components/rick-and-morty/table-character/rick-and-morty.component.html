@@ -1,0 +1,26 @@
+<div class="w-100">
+    <section class="w-100 mt-4 m-3 ">
+        <table class=" table table-success table-striped text-center ">
+            <thead>
+                <tr>
+                    <th scope="col">Imágen</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Especie</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let character of characters.results; index as i">
+                    <td class="tdImg">
+                        <div class="imgContainer">
+                            <img src="{{character.image}}">
+                        </div>
+                    <td>{{character.name}}</td>
+                    <td>{{character.species}}</td>
+                    <td><button class="btn btn-outline-success " routerLink="/card-detail-rm/{{character.id}}">Ver</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
