@@ -5,15 +5,15 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class NrosPrimosPipe implements PipeTransform {
 
-  transform(numeros: number[] | null) :number[] {
+  transform(value: any, ...args: any): any {
     
-    if (numeros != null) {
+    if (value === null) {
       return [];
     }
 
     const primos: number[]= [];
 
-    primos.forEach(num => {
+    value.forEach((num: number) => {
       if (this.esPrimo(num)) {
         primos.push(num);
       }
@@ -30,7 +30,6 @@ export class NrosPrimosPipe implements PipeTransform {
     } else {
 
     }
-
     let i = 2;
     while (i * i <= num) {
       if (num % i === 0) {
@@ -39,12 +38,5 @@ export class NrosPrimosPipe implements PipeTransform {
       i++;
     }
     return true;
-    
-  //   for (let i = 2; i <= num; i++) {
-  //     if (num % i === 0) {
-  //       return false;
-  //     }
-  //   }
-  //   return true;
   }
 }
