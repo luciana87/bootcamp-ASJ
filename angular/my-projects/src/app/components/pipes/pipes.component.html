@@ -1,0 +1,71 @@
+<p>{{nombre}}</p>
+<div>
+    <p>uppercase: </p>
+    <h3>{{ nombre | uppercase }}</h3>
+</div>
+<hr>
+<div>
+    <p>lowercase: </p>
+    <h3>{{ nombre2 | lowercase }}</h3>
+</div>
+<hr>
+<div>
+    <p>Currency: </p>
+    <h4>{{ total2 | currency }}</h4>
+    <h4>{{ total | currency:"USD" }}</h4>
+    <h4>{{ total | currency:'INR' }}</h4>
+    <h4>{{ total | currency:"EUR" }}</h4>
+</div>
+<hr>
+<div>
+    <p>Date</p>
+    <h4>{{ fecha }}</h4>
+    <h4>{{ fecha | date}}</h4>
+    <p>Con parámetros</p>
+    <h4>{{ fecha | date: 'long'}}</h4>
+    <h4>{{ fecha | date:'medium'}}</h4>
+    <h4>{{ fecha | date:'short'}}</h4>
+    <h4>{{ fecha | date:'full'}}</h4>
+    <p>Date</p>
+    <h4>{{ fecha | date:'shortDate'}}</h4>
+    <h4>{{ fecha | date:'mediumDate'}}</h4>
+    <h4>{{ fecha | date:'longDate'}}</h4>
+    <h4>{{ fecha | date:'fullDate'}}</h4>
+    <h4>{{ fecha | date:'yyy-dd-MM'}}</h4>
+    <h4>{{ fecha | date:'MM-dd-yyyy'}}</h4>
+    <h4>{{ fecha | date:'MM/dd/yyyy'}}</h4>
+    <p>Time</p>
+    <h4>{{ fecha | date:'shortTime'}}</h4>
+    <h4>{{ fecha | date:'mediumTime'}}</h4>
+    <h4>{{ fecha | date:'longTime'}}</h4>
+    <h4>{{ fecha | date:'fullTime'}}</h4>
+</div>
+<hr>
+<div>
+    <p>JSON:</p>
+    <h4>{{objeto}}</h4>
+    <h4>{{ objeto | json}}</h4>
+    <p>Combinar pipes:</p>
+    <h4>{{objeto | json | uppercase}}</h4>
+</div>
+<!-- <div>
+    <h4>{{ objeto | async}}</h4>
+    lo renderiza después de que llegue la promesa
+</div> -->
+
+<div>
+    <p>Mi pipe</p>
+    <h4>{{nombre | miPipe}}</h4>
+    <h4>{{ 'Hola' | miPipe: "ingles"}}</h4>
+    <h4>{{ 'Hola' | miPipe: "aleman"}}</h4>
+    <h4>{{ 'Hola' | miPipe: "italiano"}}</h4>
+</div>
+<div>
+    <h4>{{ 5 | potencia: 2}}</h4>
+    <h4>{{ 5 | potencia}}</h4>
+</div>
+
+<div>
+    <p>Numeros primos</p>
+    <h3>{{ numeros | nrosPrimos }}</h3>
+</div>>

@@ -7,6 +7,7 @@ import { SimpsonsComponent } from './components/simpsons/simpsons.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { RickAndMortyComponent } from './components/rick-and-morty/table-character/rick-and-morty.component';
 import { CardDetailRmComponent } from './components/rick-and-morty/card-detail-rm/card-detail-rm.component';
+import { PipesComponent } from './components/pipes/pipes.component';
 
 
 //URL = https://localhost:4200/
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'rick-and-morty', component: RickAndMortyComponent},
   { path: 'card-detail-rm/:id', component: CardDetailRmComponent},
   // { path:'', pathMatch: 'full', redirectTo: ' ErrorComponent'},
+  { path: 'pipes', component: PipesComponent},
   { path: '**', pathMatch: 'full', redirectTo: ''}
 ];
 

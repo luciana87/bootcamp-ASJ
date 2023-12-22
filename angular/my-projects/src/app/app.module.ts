@@ -16,7 +16,11 @@ import { RickAndMortyComponent } from './components/rick-and-morty/table-charact
 
 import { RickAndMortyServiceService } from './services/rick-and-morty/rick-and-morty-service.service';  //Importo el modulo para poder usar el servicio
 import { HttpClientModule } from '@angular/common/http';
-import { CardDetailRmComponent } from './components/rick-and-morty/card-detail-rm/card-detail-rm.component'; //Importo el modulo para poder usar http
+import { CardDetailRmComponent } from './components/rick-and-morty/card-detail-rm/card-detail-rm.component';
+import { PipesComponent } from './components/pipes/pipes.component';
+import { MiPipePipe } from './pipes/mi-pipe.pipe';
+import { PotenciaPipe } from './pipes/potencia.pipe';
+import { NrosPrimosPipe } from './pipes/nros-primos.pipe'; //Importo el modulo para poder usar http
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { CardDetailRmComponent } from './components/rick-and-morty/card-detail-r
     TodoListComponent,
     SimpsonsComponent,
     RickAndMortyComponent,
-    CardDetailRmComponent
+    CardDetailRmComponent,
+    PipesComponent,
+    MiPipePipe,
+    PotenciaPipe,
+    NrosPrimosPipe
   ],
   imports: [
     BrowserModule,
