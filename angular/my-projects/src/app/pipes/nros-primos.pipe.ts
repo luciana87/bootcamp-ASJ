@@ -7,11 +7,11 @@ export class NrosPrimosPipe implements PipeTransform {
 
   transform(value: any, ...args: any): any {
     
+    const primos: number[]= [];
+
     if (value === null) {
       return [];
     }
-
-    const primos: number[]= [];
 
     value.forEach((num: number) => {
       if (this.esPrimo(num)) {
