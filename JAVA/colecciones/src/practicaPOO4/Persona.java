@@ -23,7 +23,7 @@ public class Persona {
 		this.nombre = nombre;
 		this.dni = generaDNI();
 		this.edad = edad;
-		this.sexo = sexo;
+		this.sexo = this.comprobarSexo(sexo);
 	}
 
 
@@ -32,7 +32,7 @@ public class Persona {
 		this.nombre = nombre;
 		this.edad = edad;
 		this.dni = generaDNI();
-		this.sexo = sexo;
+		this.sexo = this.comprobarSexo(sexo);
 		this.peso = peso;
 		this.altura = altura;
 	}
@@ -129,13 +129,14 @@ public class Persona {
 		return (edad >= 18);		
 	}
 	
-	public void comprobarSexo () {
+	private char comprobarSexo (char sexo) {
 		
 		sexo = Character.toUpperCase(sexo);
 		
 		if (sexo != 'H' && sexo != 'F') {
-            sexo = 'H';
+           sexo = 'H';
         } 
+		return sexo;
 	}
 
 

@@ -12,7 +12,7 @@ public class ejercicio4 {
 		
 		Persona persona2 = new Persona("Emanuel", 39, 'M');
 		Persona persona3 = new Persona("Valentino", 10, 'M', 40, 1.35);
-		Persona persona4 = new Persona("María", 20, 'P', 80, 1.30);
+		Persona persona4 = new Persona("María", 20, 'P', 80, 1.30); //Mal ingresado el sexo
 		
 
 		
@@ -48,11 +48,7 @@ public class ejercicio4 {
 		System.out.println(persona2.toString());
 		System.out.println(persona3.toString());
 		System.out.println(persona4.toString());	
-		
-		System.out.println("\n");
-		
-		persona4.comprobarSexo(); //Modifica el sexo que era P y lo define como H.
-		System.out.println(persona4.toString());
+	
 
 	}
 
