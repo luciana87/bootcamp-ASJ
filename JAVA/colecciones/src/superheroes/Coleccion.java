@@ -45,7 +45,7 @@ public class Coleccion {
 	}
 
 	public void mostrarColeccion() {
-		System.out.println("Nombre colección: " + this.nombre + "\nFiguras de la colección: ");
+		System.out.println("Nombre: " + this.nombre + "\nFiguras de la colección: ");
 		for (Figura figura : figuras) {
 			System.out.println(figura.toString());
 		}
