@@ -14,25 +14,45 @@ public class TareaService {
 	
 	private TareaRepository tareaRepository;
 	
-	public TareaService () {}
-	
 	public TareaService (TareaRepository tareaRepository) {
 		this.tareaRepository = tareaRepository;
 	}
 	
-	public void createTarea () {}
+	public TareaEntity createTarea (TareaEntity tarea) {
+		TareaEntity tareaEntity = tareaRepository.save(tarea);
+		return tarea;
+		
+	}
 
-	public TareaEntity getById(Integer id) {
-		Optional<TareaEntity> tareaObtenida = tareaRepository.findById(id);
-		if(tareaObtenida.isPresent()) {
-			
-		}
-		return null;
+	public Optional<TareaEntity> getById(Integer id) {
+		Optional<TareaEntity> tarea = this.tareaRepository.findById(id);
+		return tarea;
 	}
 	
 
 	public List<TareaEntity> getTareas(){
 		return tareaRepository.findAll();		
 	}
+
+	public void deleteTarea(Integer id) {
+		this.tareaRepository.deleteById(id);
+
+	}
+
+	public void updateTarea(Integer id, TareaEntity tarea) throws Exception {
+        Optional<TareaEntity> tareaOptional = tareaRepository.findById(id);
+        if (tareaOptional.isEmpty()){
+            throw new Exception("Proveedor no encontrado.");
+        }
+        
+        TareaEntity tareaAReemplazar = tareaOptional.get();
+        tareaAReemplazar.setName(tarea.getName());
+        tareaAReemplazar.setText(tarea.getText());
+        tareaAReemplazar.setStatus(tarea.isStatus());
+        tareaAReemplazar.setDeleted(tarea.isDeleted());
+        tareaAReemplazar.setCreated(tarea.getCreated());
+        
+        tareaRepository.save(tareaAReemplazar);
+    }
 
 }

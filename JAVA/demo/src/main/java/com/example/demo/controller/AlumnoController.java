@@ -9,11 +9,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.Alumno;
 
-@RestController()
+@RestController
+@RequestMapping("/alumnos")
 public class AlumnoController {
 	
 	 static List<Alumno> alumnos = new ArrayList<Alumno>(
@@ -24,12 +26,12 @@ public class AlumnoController {
 		);
 	
 	
-	@GetMapping("/alumnos")
+	@GetMapping("/listar")
 	public List<Alumno> getAlumnos() {
 		return alumnos;
 	}
 	
-	@GetMapping("/alumnos/{id}")
+	@GetMapping("/{id}")
 	public Alumno findAlumno(@PathVariable int id) {
 		Alumno alumnoEncontrado = null;
 		for (Alumno alumno : alumnos) {
@@ -38,7 +40,7 @@ public class AlumnoController {
 		return alumnoEncontrado;
 	}
 	
-	@DeleteMapping("/alumnos/{id}")
+	@DeleteMapping("/{id}")
 	public String deleteAlumnoById(@PathVariable int id) {
 		String msjString = "Alumno no encontrado";
 		Alumno alumnoEncontrado = null;
@@ -52,14 +54,26 @@ public class AlumnoController {
 		return msjString;	
 	}
 	
-	@PostMapping("/alumnos/crear")
+	@PostMapping("/")
 	public Alumno createAlumno(@RequestBody Alumno alumno) {
 		alumno.setId(this.alumnos.size()+1);
 		this.alumnos.add(alumno);
 		return alumno;
 	}
+	 
+	@PutMapping("/{id}")
+	public Alumno updateAlumnById(@PathVariable int id, @RequestBody Alumno alumno) {
+		for(int i = 0; i < this.alumnos.size(); i++) { 
+			if (this.alumnos.get(i).getId() == id) {
+				this.alumnos.remove(i);  
+				this.alumnos.add(i, alumno); 
+				return alumno;
+			} 
+		} 
+		return null; 
+	} 
 	
-	@PutMapping("/alumnos/modificar")
+/*	@PutMapping("/alumnos/modificar")
 	public List<Alumno> updateAlumno(@RequestBody Alumno alumno) {
 		for (int i = 0; i < this.alumnos.size(); i++) {
 			if(alumno.getId() == this.alumnos.get(i).getId()) {
@@ -68,5 +82,5 @@ public class AlumnoController {
 		}
 		return this.alumnos;
 	}
-
+*/
 }

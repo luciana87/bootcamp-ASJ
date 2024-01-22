@@ -17,50 +17,84 @@ public class TareaEntity {
 	private Integer id;
 	
 	@Column(nullable = false)
-	private String nombre;
-	private String descripcion;
-	private boolean estado;
+	private String name;
+	private String text;
+	private boolean status;
+	private boolean deleted;
+	private String created;
+
 	
 	public TareaEntity () {}
 
-	public TareaEntity(Integer id, String nombre, String descripcion, boolean estado) {
+
+	public TareaEntity(Integer id, String name, String text, boolean status, boolean deleted, String created) {
+
 		this.id = id;
-		this.nombre = nombre;
-		this.descripcion = descripcion;
-		this.estado = estado;
+		this.name = name;
+		this.text = text;
+		this.status = status;
+		this.deleted = deleted;
+		this.created = created;
 	}
 
-	
+
 	public Integer getId() {
 		return id;
 	}
+
 
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public String getNombre() {
-		return nombre;
+
+	public String getName() {
+		return name;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getDescripcion() {
-		return descripcion;
+
+	public String getText() {
+		return text;
 	}
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+
+	public void setText(String text) {
+		this.text = text;
 	}
 
-	public boolean isEstado() {
-		return estado;
+
+	public boolean isStatus() {
+		return status;
 	}
 
-	public void setEstado(boolean estado) {
-		this.estado = estado;
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
+
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
+	}
+
+
+	public String getCreated() {
+		return created;
+	}
+
+
+	public void setCreated(String created) {
+		this.created = created;
 	}
 	
 

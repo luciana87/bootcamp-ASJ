@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.bootcamp.todolist.entities.TareaEntity;
 
-@Repository
 public interface TareaRepository extends JpaRepository<TareaEntity, Integer>{
 	
 
