@@ -1,34 +1,47 @@
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Task } from '../models/Task';
+import { Obj } from '@popperjs/core';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodolistService {
 
-  private apiUrl = 'http://localhost:8080/tareas'; // Reemplaza con la URL de tu backend
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    console.log('Servicio funcionando');
 
-  getAllTareas(): Observable<Task[]> {
-    return this.http.get<Task[]>(this.apiUrl);
   }
 
-  getTareaById(id: number): Observable<Task> {
-    return this.http.get<Task>(`${this.apiUrl}/${id}`);
+  // public getAllTareas(): Observable<Task>{
+  //   return this.http.get<Task>('http://localhost:8080/tareas')
+  // }
+
+  // public getAllTareas(): Observable<Task[]> {
+  //   return this.http.get<Task[]>('http://localhost:8080/tareas', { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) });
+  // }
+
+  public getAllTareas(): Observable<Task[]> {
+    const headers = { 'Content-Type': 'application/json' };
+    return this.http.get<Task[]>('http://localhost:8080/tareas',{headers});
+  }
+  public getTareaById(id: number){
+    return this.http.get('http://localhost:8080/tareas/'+id)
   }
 
-  saveTarea(tarea: Task): Observable<Task> {
-    return this.http.post<Task>(this.apiUrl, tarea);
+  public createTarea(body: any): Observable<Object>{
+    const headers = { 'Content-Type': 'application/json' };
+    return this.http.post('http://localhost:8080/tareas/crear', body, {headers})
   }
 
-  updateTarea(id: number, tarea: Task): Observable<Task> {
-    return this.http.put<Task>(`${this.apiUrl}/${id}`, tarea);
+  public updateTarea(id: number, body: any){
+    return this.http.put('http://localhost:8080/tareas/'+id, body)
   }
 
-  deleteTarea(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  public deleteTarea(id: number): Observable<Object>{
+    return this.http.delete('http://localhost:8080/tareas/'+id)
   }
 }
