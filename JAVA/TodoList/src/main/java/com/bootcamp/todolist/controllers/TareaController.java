@@ -1,11 +1,15 @@
 package com.bootcamp.todolist.controllers;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.data.projection.TargetAware;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bootcamp.todolist.entities.TareaEntity;
 import com.bootcamp.todolist.services.TareaService;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/tareas")
@@ -46,10 +52,21 @@ public class TareaController {
 		
 	}
 	
+	
 	@PostMapping("/crear")
-	public ResponseEntity<TareaEntity> createTarea(@RequestBody TareaEntity tarea) {
-		return new ResponseEntity<>(tareaService.createTarea(tarea),HttpStatus.CREATED);
-		
+	public ResponseEntity<?> createTarea(@Valid @RequestBody TareaEntity tarea, BindingResult bindingResult) {
+		if (bindingResult.hasErrors()) {
+			//Guardo los errores
+			Map<String, String> errors = new HashMap<String, String>();
+			bindingResult.getFieldErrors().forEach((error) -> {
+				String campo = error.getField();
+				String errMsj = error.getDefaultMessage() ;
+				errors.put(campo, errMsj);
+			});
+			System.out.println(errors);
+			return new ResponseEntity(errors, HttpStatus.BAD_REQUEST);
+		}
+		return new ResponseEntity<TareaEntity>(tareaService.createTarea(tarea),HttpStatus.CREATED);
 	}
 	
 	@PutMapping("/{id}")

@@ -1,6 +1,5 @@
 package com.bootcamp.todolist.services;
 
-import java.lang.foreign.Linker.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,7 +19,7 @@ public class TareaService {
 	
 	public TareaEntity createTarea (TareaEntity tarea) {
 		TareaEntity tareaEntity = tareaRepository.save(tarea);
-		return tarea;
+		return tareaEntity;
 		
 	}
 
@@ -28,7 +27,6 @@ public class TareaService {
 		Optional<TareaEntity> tarea = this.tareaRepository.findById(id);
 		return tarea;
 	}
-	
 
 	public List<TareaEntity> getTareas(){
 		return tareaRepository.findAll();		

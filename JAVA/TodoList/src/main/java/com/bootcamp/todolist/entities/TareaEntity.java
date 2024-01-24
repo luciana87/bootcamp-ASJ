@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "tareas")
@@ -16,7 +17,8 @@ public class TareaEntity {
 	@Column(unique = true, nullable = false)
 	private Integer id;
 	
-	@Column(nullable = false)
+	@Column
+	@NotNull
 	private String name;
 	private String text;
 	private boolean status;
