@@ -1,0 +1,13 @@
+<div class="container">
+    <form class="mt-4" #formVideo="ngForm" (ngSubmit)="postVideo(formVideo)">
+        <label class="form-label text-light " for="url">URL:</label>
+        <input [(ngModel)]="this.video.url" type="text" required id="url" name="url" class="form-control mb-2" placeholder="Ingrese URL"/>
+        <label class="form-label text-light " for="titulo">Titulo:</label>
+        <input [(ngModel)]="this.video.title" type="text" required id="titulo" name="titulo" class="form-control mb-2" placeholder="Ingrese Titulo"/>
+        <label class="form-label text-light " for="category">Categoria:</label>
+        <input [(ngModel)]="this.video.category" type="text" required id="category" name="category" class="form-control mb-2" placeholder="Ingrese Categoria"/>
+        <label class="form-label text-light " for="description">Descripcion:</label>
+        <textarea [(ngModel)]="this.video.description" rows="3" type="text" required id="description" name="description" class="form-control mb-2" placeholder="Ingrese Descripcion"></textarea>
+        <button class="btn btn-primary mt-3" type="submit">Agregar</button>
+    </form>
+</div>
